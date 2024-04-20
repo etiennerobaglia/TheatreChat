@@ -192,6 +192,7 @@ body {
 .system-message-container:first-of-type {
   margin-top: 1.5rem;
 }
+
 .system-message-container {
   clear: both;
   line-height: 18px;
@@ -203,6 +204,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.system-message-container-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5px;
+  z-index: 2;
 }
 
 .system-message {

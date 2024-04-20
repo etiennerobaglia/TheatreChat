@@ -1,11 +1,22 @@
+{% assign previous_message_side = include.index | minus: 1 | modulo: 2 %}
 {% assign message_side = include.index | modulo: 2 %}
+
+{% if include.previousCharacter == include.dialogue.character 
+      and include.previousCharacter == include.previousPreviousCharacter 
+%}
+{% elsif include.previousCharacter == include.dialogue.character %}
+  {% assign message_side = previous_message_side %}
+{% endif %}
+
 {% for character in include.characters %}
   {% if character.name == include.dialogue.character %}
     {% assign color = character.color %}
   {% endif %}
 {% endfor %}
 
-<div class="message {% if message_side == 0 %}sent{% else %}received{% endif %}">
+<div 
+  class="message {% if message_side == 0 %}sent{% else %}received{% endif %}"
+>
   <div class="character-container">
     <div class="character character-{{color}}" >{{include.dialogue.character}}</div>
     {% if include.dialogue.didascalia %}
@@ -13,7 +24,7 @@
     {% endif %}
   </div>
   <div class="replica" id="random">{{include.dialogue.replica | markdownify | newline_to_br}}</div>
-  <span class="metadata">
+  <!-- <span class="metadata">
     <span class="time"></span>
-  </span>
+  </span> -->
 </div>

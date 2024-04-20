@@ -95,7 +95,6 @@
                       {% endif %}
 
                       {% for scene in act.scenes %}
-
                         {% capture scene-intro %}
                           Act {{act.act}}, scene {% for i in (1..scene.scene) %}I{% endfor %}
                           {{scene.description}}
@@ -103,14 +102,22 @@
                         {% include system-message.html
                           type="white"
                           content=scene-intro
+                          sticky=true
                         %}
 
+                        {% assign previousCharacter = no %}
+                        {% assign previousPreviousCharacter = no %}
+                        
                         {% for dialogue in scene.dialogues %}
                           {% include replica.html
-                              index=forloop.index
-                              dialogue=dialogue
-                              characters=page.play.characters
+                            index=forloop.index
+                            dialogue=dialogue
+                            previousCharacter=previousCharacter
+                            previousPreviousCharacter=previousPreviousCharacter
+                            characters=page.play.characters
                           %}
+                          {% assign previousPreviousCharacter = previousCharacter %}
+                          {% assign previousCharacter = dialogue.character %}
                         {% endfor %}
                       {% endfor %}
                     {% endfor %}
