@@ -518,3 +518,9 @@ body {
     height: calc(100vh - 120px);
   }
 /* } */
+
+@media (max-width: 450px) {
+  .name {
+    max-width: 230px;
+  }
+}
