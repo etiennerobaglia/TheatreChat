@@ -28,10 +28,10 @@ play:
       color: pink
     - name: Tartuffe
       description: faux dévot.
-      color: darkblue
-    - name: Dorinne
-      descrition: suivante de Mariane.
       color: darkpink
+    - name: Dorine
+      descrition: suivante de Mariane.
+      color: darkblue
     - name: Monsieur Loyal
       description: sergent.
       color: green
