@@ -1,0 +1,19 @@
+{% assign message_side = include.index | modulo: 2 %}
+{% for character in include.characters %}
+  {% if character.name == include.dialogue.character %}
+    {% assign color = character.color %}
+  {% endif %}
+{% endfor %}
+
+<div class="message {% if message_side == 0 %}sent{% else %}received{% endif %}">
+  <div class="character-container">
+    <div class="character character-{{color}}" >{{include.dialogue.character}}</div>
+    {% if include.dialogue.didascalia %}
+      <div class="didascalia">&nbsp;- {{include.dialogue.didascalia}}</div>
+    {% endif %}
+  </div>
+  <div class="replica" id="random">{{include.dialogue.replica | markdownify | newline_to_br}}</div>
+  <span class="metadata">
+    <span class="time"></span>
+  </span>
+</div>
