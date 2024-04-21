@@ -1,58 +1,59 @@
 ---
 layout: chat
 title: Tartuffe
+img: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Moli%C3%A8re_-_Nicolas_Mignard_%281658%29.jpg/480px-Moli%C3%A8re_-_Nicolas_Mignard_%281658%29.jpg
 permalink: /
 play: 
   name: Le Tartuffe ou l’Imposteur
   description: La scène est à Paris, dans la maison d’Orgon.
+  author: Molière
   characters:
-    - name: Madame Pernelle
+    - character: Madame Pernelle
       description: mère d’Orgon.
       color: green
-    - name: Orgon
-      description:  mari d’Elmire.
+    - character: Orgon
+      description: mari d’Elmire.
       color: orange
-    - name: Elmire
+    - character: Elmire
       description: femme d’Orgon.
       color: blue
-    - name: Damis
+    - character: Damis
       description: fils d’Orgon.
       color: brown
-    - name: Marianne
+    - character: Marianne
       description: fille d’Orgon.
       color: purple
-    - name: Valère
+    - character: Valère
       color: pink
-    - name: Cléante
+    - character: Cléante
       description: beau-frère d’Orgon.
       color: pink
-    - name: Tartuffe
+    - character: Tartuffe
       description: faux dévot.
       color: darkpink
-    - name: Dorine
+    - character: Dorine
       descrition: suivante de Mariane.
       color: darkblue
-    - name: Monsieur Loyal
+    - character: Monsieur Loyal
       description: sergent.
       color: green
-    - name: Un Exempt
+    - character: Un Exempt
       color: green
-    - name: Filipote 
+    - character: Filipote 
       description: servante de madame Pernelle.
       color: orange
-  author: Molière
   acts:
   - act: 1
     scenes:
     - scene: 1
       characters: 
-        - name: Madame Pernelle
-        - name: Elmire
-        - name: Mariane
-        - name: Cléante
-        - name: Damis
-        - name: Dorine
-        - name: Flipote
+        - character: Madame Pernelle
+        - character: Elmire
+        - character: Mariane
+        - character: Cléante
+        - character: Damis
+        - character: Dorine
+        - character: Flipote
       dialogues: 
       - character: Madame Pernelle
         replica: |-
@@ -274,9 +275,9 @@ play:
           Marchons, gaupe, marchons.
     - scene: 2
       characters: 
-        - name: Cléante
+        - character: Cléante
           color: blue
-        - name: Dorine
+        - character: Dorine
           color: lime
       dialogues: 
       - character: Cléante

@@ -37,7 +37,7 @@
                     <i class="zmdi zmdi-arrow-left"></i>
                   </div>
                   <div class="avatar">
-                    <img src="{{page.img}}" alt="">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Moli%C3%A8re_-_Nicolas_Mignard_%281658%29.jpg/480px-Moli%C3%A8re_-_Nicolas_Mignard_%281658%29.jpg" alt="">
                   </div>
                   <div class="name">
                     <span>{{page.play.name}}</span>
@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <div class="conversation">
-                  <div class="conversation-container" id="top">
+                  <div class="conversation-container">
                     
                     {% capture play-creation %}
                       {{page.play.author}} created group "{{page.play.name}}".
@@ -90,50 +90,34 @@
                       {% if act.description %}
                         {% include system-message.html
                           type="white"
-                          content=act.description
+                          play=act.description
                         %}
                       {% endif %}
 
                       {% for scene in act.scenes %}
                         {% capture scene-intro %}
-                          Act {{act.act}}, scene {{scene.scene}}
-                        {% endcapture %}
-                        {% include system-message.html
-                          type="yellow"
-                          content=scene-intro
-                          sticky=true
-                        %}
-                        {% capture scene-intro %}
+                          Act {{act.act}}, scene {% for i in (1..scene.scene) %}I{% endfor %}
                           {{scene.description}}
                         {% endcapture %}
                         {% include system-message.html
                           type="white"
                           content=scene-intro
+                          sticky=true
                         %}
 
                         {% assign previousCharacter = no %}
                         {% assign previousPreviousCharacter = no %}
                         
                         {% for dialogue in scene.dialogues %}
-                          {% if dialogue.character %}
-                            {% include replica.html
-                              index=forloop.index
-                              dialogue=dialogue
-                              previousCharacter=previousCharacter
-                              previousPreviousCharacter=previousPreviousCharacter
-                              characters=page.play.characters
-                            %}
-                            {% assign previousPreviousCharacter = previousCharacter %}
-                            {% assign previousCharacter = dialogue.character %}
-                          {% elsif dialogue.didascalia %}
-                            {% capture didascalia %}
-                              <em>{{dialogue.didascalia}}</em>
-                            {% endcapture %}
-                            {% include system-message.html
-                              content=didascalia
-                              type="white"
-                            %}
-                          {% endif %}
+                          {% include replica.html
+                            index=forloop.index
+                            dialogue=dialogue
+                            previousCharacter=previousCharacter
+                            previousPreviousCharacter=previousPreviousCharacter
+                            characters=page.play.characters
+                          %}
+                          {% assign previousPreviousCharacter = previousCharacter %}
+                          {% assign previousCharacter = dialogue.character %}
                         {% endfor %}
                       {% endfor %}
                     {% endfor %}
