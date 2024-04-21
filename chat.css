@@ -213,7 +213,7 @@ body {
 .system-message-container-sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 5px;
+  top: 55px;
   z-index: 2;
 }
 
