@@ -8,38 +8,38 @@ play:
   description: La scène est à Paris, dans la maison d’Orgon.
   author: Molière
   characters:
-    - character: Madame Pernelle
+    - name: Madame Pernelle
       description: mère d’Orgon.
       color: green
-    - character: Orgon
+    - name: Orgon
       description: mari d’Elmire.
       color: orange
-    - character: Elmire
+    - name: Elmire
       description: femme d’Orgon.
       color: blue
-    - character: Damis
+    - name: Damis
       description: fils d’Orgon.
       color: brown
-    - character: Marianne
+    - name: Marianne
       description: fille d’Orgon.
       color: purple
-    - character: Valère
+    - name: Valère
       color: pink
-    - character: Cléante
+    - name: Cléante
       description: beau-frère d’Orgon.
       color: pink
-    - character: Tartuffe
+    - name: Tartuffe
       description: faux dévot.
       color: darkpink
-    - character: Dorine
+    - name: Dorine
       descrition: suivante de Mariane.
       color: darkblue
-    - character: Monsieur Loyal
+    - name: Monsieur Loyal
       description: sergent.
       color: green
-    - character: Un Exempt
+    - name: Un Exempt
       color: green
-    - character: Filipote 
+    - name: Filipote 
       description: servante de madame Pernelle.
       color: orange
   acts:
